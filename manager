@@ -1,0 +1,5 @@
+#!/bin/bash
+(sed '6 r HZADwidth' HZYDW.py) > HZYDecaywidth.py;
+cat HZYDecaywidth.py
+python3 NumericalDW.py;
+

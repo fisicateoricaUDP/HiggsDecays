@@ -1,0 +1,16 @@
+This is a package to systematize the decay of the Higgs boson into a Z boson and a photon pair.
+
+1- How to use
+
+a) First compile the wolfram mathematica package. FeynCalc, FeynHelpers and FeynArts are required.
+
+wolframscript HZAprogram.wls
+
+This gives the analytical expression of the decay width, and export it to a text called "HZADwidth" which contains the analytical expression and it gives the pdf of the contributing diagrams. It also gives an additional text called "ExpressionDWidth" with only the decay width expression
+
+b) compile the bash manager called "manager":
+
+bash manager
+
+Which is a bash interface to create a python package with the decay width translated to python language. Scienceplot, Matplotlib, numpy and cmath libraries are required.
+The plot of branching ratio in SM at LO  is generated and called "brvsmh.pdf"
