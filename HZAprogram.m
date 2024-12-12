@@ -80,7 +80,7 @@ Coefficient[RedAmp,Epsilon^-1] // Simplify;
 F4 = RedAmp// ChangeDimension[#, 4] & 
 
 
-SP[\!\(TraditionalForm\`p3\),\!\(TraditionalForm\`p3\)]=0;
+SP[p3,p3]=0;
 SP[p2,p3]=  (mh^2-mz^2)/2;
 SP[p2,p2]= mz^2;
 SF4 = F4*(ComplexConjugate[F4]) //Simplify // FCE ;  
