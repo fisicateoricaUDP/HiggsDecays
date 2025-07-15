@@ -1,6 +1,5 @@
 Programs included here were developed by the group of Theoretical Physics from Universidad de Pamplona - Colombia. 
-These routines are useful to compute the decay width of a Higgs boson decaying into a Z boson - photon pair in the SM at LO,
-as well as in the MSSM at LO. Results of these routines are reported in arXiv:2507.09395. 
+These routines are useful to compute the decay width of a Higgs boson decaying into a Z boson - photon pair in the SM at LO, as well as in the MSSM at LO. Results of these routines are reported in arXiv:2507.09395. 
 
 -- How to use
 
