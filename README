@@ -14,13 +14,11 @@ i) 1_wzgAmp.wls
 
 This program produce the amplitudes, neccesary in the computation of the Higgs decay width at LO in the SM, as well as in the MSSM.
 
-The program generates all the required Feynman Diagrams and its corresponding amplitudes, including divergent and finite part
-contrubutions in the R_{\zeta} gauge.  
+The program generates all the required Feynman Diagrams and its corresponding amplitudes, including divergent and finite part contrubutions in the R_{\zeta} gauge.  
 
 ii) 2_divfin.wls
 
-This code produces separately the sum of the finite and divergent part of all the contributing diagrams to the decay width 
-in the SM or the MSSM using the R_{\zeta} gauge. 
+This code produces separately the sum of the finite and divergent part of all the contributing diagrams to the decay width in the SM or the MSSM using the R_{\zeta} gauge. 
 
 The results of this code can be consulted in the folder results. 
 
