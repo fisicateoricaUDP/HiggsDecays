@@ -1,17 +1,19 @@
-Program made by Cristian Alexis López Alvernia to implement the Higgs decay into a Z boson - photon pair in SM at LO 
-This is a package to systematize the decay of the Higgs boson into a Z boson and a photon pair.
+Programs included here were developed by the group of Theoretical Physics from Universidad de Pamplona - Colombia. 
+These routines are useful to compute the decay width of a Higgs boson decaying into a Z boson - photon pair in the SM at LO,
+as well as in the MSSM at LO. 
 
-1- How to use
+- How to use
 
-a) First compile the wolfram mathematica package. FeynCalc, FeynHelpers and FeynArts are required.
+1) Just compile the Mathematica routines. FeynArts, FeynCalc and FeynHelpers are required.
 
-wolframscript HZAprogram.wls
+The codes included are: 
 
-This gives the analytical expression of the decay width, and export it to a text called "HZADwidth" which contains the analytical expression and it gives the pdf of the contributing diagrams. It also gives an additional text called "ExpressionDWidth" with only the decay width expression
+i) wolframscript HZAprogram.wls
 
-b) compile the bash manager called "manager":
+This gives the analytical expression of the decay width in the SM, and export it to a text called "HZADwidth" which contains the analytical expression and it gives the pdf of the contributing diagrams. 
+It also gives an additional text called "ExpressionDWidth" with only the decay width expression.
 
-bash manager
+v) bash manager
 
-Which is a bash interface to create a python package with the decay width translated to python language. Scienceplot, Matplotlib, numpy and cmath libraries are required.
+This is a bash interface to create a python package with the decay width translated to python language. Scienceplot, Matplotlib, numpy and cmath libraries are required.
 The plot of branching ratio in SM at LO  is generated and called "brvsmh.pdf"
