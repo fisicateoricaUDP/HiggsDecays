@@ -1,19 +1,37 @@
 Programs included here were developed by the group of Theoretical Physics from Universidad de Pamplona - Colombia. 
 These routines are useful to compute the decay width of a Higgs boson decaying into a Z boson - photon pair in the SM at LO,
-as well as in the MSSM at LO. 
+as well as in the MSSM at LO. Results of these routines are reported in arXiv:2507.09395. 
 
-- How to use
+-- How to use
 
 1) Just compile the Mathematica routines. FeynArts, FeynCalc and FeynHelpers are required.
 
 The codes included are: 
 
-i) wolframscript HZAprogram.wls
+0) 0_Script_SM.sh : This bash script is required to evaluate 1_wzgAmp.wls and 2_divfin.wls in the SM.
+   0_Script_MSSM.sh : This bash script is required to evaluate 1_wzgAmp.wls and 2_divfin.wls in the MSSM.
 
-This gives the analytical expression of the decay width in the SM, and export it to a text called "HZADwidth" which contains the analytical expression and it gives the pdf of the contributing diagrams. 
+i) 1_wzgAmp.wls
+
+This program produce the amplitudes, neccesary in the computation of the Higgs decay width at LO in the SM, as well as in the MSSM.
+
+The program generates all the required Feynman Diagrams and its corresponding amplitudes, including divergent and finite part
+contrubutions in the R_{\zeta} gauge.  
+
+ii) 2_divfin.wls
+
+This code produces separately the sum of the finite and divergent part of all the contributing diagrams to the decay width 
+in the SM or the MSSM using the R_{\zeta} gauge. 
+
+The results of this code can be consulted in the folder results. 
+
+iii) wolframscript HZAprogram.wls
+
+This code gives the analytical expression of the decay width in the SM by using the unitary gauge.
 It also gives an additional text called "ExpressionDWidth" with only the decay width expression.
 
-v) bash manager
+iv) bash manager
 
-This is a bash interface to create a python package with the decay width translated to python language. Scienceplot, Matplotlib, numpy and cmath libraries are required.
+This is a bash interface to create a python package with the decay width translated to python language. 
+Scienceplot, Matplotlib, numpy and cmath libraries are required.
 The plot of branching ratio in SM at LO  is generated and called "brvsmh.pdf"
