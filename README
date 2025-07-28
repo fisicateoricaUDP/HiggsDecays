@@ -31,7 +31,7 @@ iv) 4_HZG_SM.m
 
 Here you can find the necessary data to produce the plots of Section 2 for this Higgs decay in the SM. 
 
-iv) bash manager
+vi) bash manager
 
 This is a bash interface to create a python package with the decay width translated to python language. 
 Scienceplot, Matplotlib, numpy and cmath libraries are required.
