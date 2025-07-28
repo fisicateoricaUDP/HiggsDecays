@@ -22,10 +22,14 @@ This code produces separately the sum of the finite and divergent part of all th
 
 The results of this code can be consulted in the folder results. 
 
-iii) wolframscript HZAprogram.wls
+iii) 3_HZAprogram.wls
 
 This code gives the analytical expression of the decay width in the SM by using the unitary gauge.
 It also gives an additional text called "ExpressionDWidth" with only the decay width expression.
+
+iv) 4_HZG_SM.m
+
+Here you can find the necessary data to produce the plots of Section 2 for this Higgs decay in the SM. 
 
 iv) bash manager
 
