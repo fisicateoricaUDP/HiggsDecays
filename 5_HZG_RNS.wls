@@ -1,9 +1,9 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-Dir = "/home/edilson/Dropbox/Research/HZgamma/Codes"
+Dir = "/wherever/you/save/this/code"
 
-
+(*save the folder outputs in the same folder as this code was saved*)
 tmp=StringJoin[Dir,"/outputs"]
 
 
@@ -11,20 +11,14 @@ SetDirectory[tmp]
 
 
 (* Key words: mu, mhalf, A0m0, A0, m0, tanb *)
-
-
 name = Input["Key Word: "]
 
-
+(*see folder outputs to look up how to set a and b*)
 a = Input["Initial data: "]
-
-
 b = Input["Final data: "]
 
 
 datos[n_] := Import[ToString[name]<>"dataHiggs"<>ToString[n]<>".csv", "CSV"];
-
-
 datosv2[m_] := Map[ToExpression@StringSplit[First[#], ","]&,datos[m]]
 
 
@@ -117,10 +111,9 @@ plot=Graphics[
 ]
 
 
-(*Export["m0plot.pdf",plot]*)
+Export["plot.pdf",plot]
 
-
-(*Quit[]*)
+Quit[]
 
 
 (*
@@ -149,6 +142,7 @@ Epilog\[Rule]{Inset[ ToString[Subscript[m,0],StandardForm]<>" = 8.0 TeV",{1250,6
 Epilog for A_0/m_0:
 
 Epilog->{Inset[ "|"ToString[Subscript[A,0],StandardForm]<>"/"<>ToString[Subscript[m,0],StandardForm]<>"|"<>" = 1.75",{4700,6.63}],
-							Inset[ "   1.50",{4962,6.15}],Inset[ "   1.25",{4962,5.70}],Inset[ "   1.00",{4962,5.35}],Inset[ "   0.75",{4962,5.05}],
+							Inset[ "   1.50",{4962,6.15}],Inset[ "   1.25",{4962,5.70}],
+                                                        Inset[ "   1.00",{4962,5.35}],Inset[ "   0.75",{4962,5.05}],
 							Inset[ "   0.50",{4962,4.85}],Inset[ "   0.25",{4962,4.65}]}
 *)
