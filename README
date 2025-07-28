@@ -5,7 +5,7 @@ These routines are useful to compute the decay width of a Higgs boson decaying i
 
 *) Just compile the Mathematica routines. FeynArts, FeynCalc and FeynHelpers are required.
 
-The codes included are: 
+The included codes are: 
 
 0) 0_Script_SM.sh : This bash script is required to evaluate 1_wzgAmp.wls and 2_divfin.wls in the SM.
    0_Script_MSSM.sh : This bash script is required to evaluate 1_wzgAmp.wls and 2_divfin.wls in the MSSM.
