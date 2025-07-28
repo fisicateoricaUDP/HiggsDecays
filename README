@@ -3,7 +3,7 @@ These routines are useful to compute the decay width of a Higgs boson decaying i
 
 -- How to use
 
-1) Just compile the Mathematica routines. FeynArts, FeynCalc and FeynHelpers are required.
+*) Just compile the Mathematica routines. FeynArts, FeynCalc and FeynHelpers are required.
 
 The codes included are: 
 
@@ -30,6 +30,11 @@ It also gives an additional text called "ExpressionDWidth" with only the decay w
 iv) 4_HZG_SM.m
 
 Here you can find the necessary data to produce the plots of Section 2 for this Higgs decay in the SM. 
+
+v) 5_HZG_MSSM.m 
+
+Sligthly modifications of this code can produce all the plots of Section 3 in the MSSM-RNS. It is required to download the compressed folder outputs.zip. 
+If you want the precise code to produce any of the plots of Section 3, please let us know. 
 
 vi) bash manager
 
