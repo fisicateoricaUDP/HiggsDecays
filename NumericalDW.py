@@ -8,8 +8,9 @@ from matplotlib.ticker import FuncFormatter
 import scienceplots
 
 
-BRHZA = HZADwidth(125.2)/0.0037
-print("BR of H to ZA in SM at LO=",BRHZA)
+BRHZA = HZADwidth(125)/0.0037
+print(f"Partial Width of H to ZA in SM at LO = {HZADwidth(125):.2e}"+" GeV")
+print(f"BR of H to ZA in SM at LO = {BRHZA:.2e}")
 BR= []
 
 #Data
