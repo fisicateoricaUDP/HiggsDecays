@@ -65,14 +65,14 @@ Redu = TID[Ampw,l]//Simplify;
 
 (* Recognizing denominators and then change them to PV function *)
 
-Print["PV functions"]
+(*PV functions *)
 PVfunctions = Cases[ Redu, FeynAmpDenominator[__],Infinity]/(I*Pi^2)  /. ChangeDenToPV // DeleteDuplicates ;
 ChangePVToLaurent = Table[(PVfunctions[[i]] -> PaXEvaluate[#,PaXImplicitPrefactor->1/(2*Pi)^(4-2*Epsilon)]) & [PVfunctions[[i]]],{i,1,Length[PVfunctions]}];
 Redu1 = ToPaVe[Redu,l]//FCE;
 
 
 (* Selecting only contributing tensor structures via Ward Identities *)
-ReduF4 =  Coefficient[Redu1,FVD[p3, \[Mu]]*FVD[p2, \[Nu]]] //Simplify;
+ReduF4 =  Coefficient[Redu1,FVD[p3, \[Mu]]*FVD[p2, \[Nu]] ]//Simplify;
 RedAmp = (ReduF4 /. ChangePVToLaurent) // FCReplaceD[#, D -> 4 - 2*Epsilon] & // Series[#, {Epsilon, 0, 0}] & // Normal //Simplify //FCE;
 Coefficient[RedAmp,Epsilon^-1] // Simplify;
 
@@ -83,15 +83,17 @@ F4 = RedAmp// ChangeDimension[#, 4] &
 SP[p3,p3]=0;
 SP[p2,p3]=  (mh^2-mz^2)/2;
 SP[p2,p2]= mz^2;
+CW = mw/mz;
+SW = Sqrt[1-CW^2];
 SF4 = F4*(ComplexConjugate[F4]) //Simplify // FCE ;  
 
 
-DWidth = mh^3/(32*Pi)*(1- mz^2/mh^2)^3*SF4/.mw->80.36/.mz->91.18/.SW->Sqrt[0.2]/.CW->Sqrt[0.8]/.e->Sqrt[4*Pi/137]//Simplify;
+DWidth = mh^3/(32*Pi)*(1- mz^2/mh^2)^3*SF4/.mw->80.36/.mz->91.18/.e->Sqrt[4*Pi/137]//Simplify;
 
+Print["Partial decay width saved in \"HZAexpressionDW\" "]
 
 DWidth1 = StringReplace[ToString[DWidth, InputForm], {"*^" -> "*10^", ".*" -> "*"}]
 text = "    DW= mathematica(\"" <> DWidth1 <> "\")";
 Export["HZADwidth", text, "Text"];
-Export["ExpressionDWidth", DW, "Text"];
-
+Export["HZAexpressionDW", DWidth, "Text"];
 Quit[]
