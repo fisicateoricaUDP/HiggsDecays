@@ -90,7 +90,7 @@ SF4 = F4*(ComplexConjugate[F4]) //Simplify // FCE ;
 
 DWidth = mh^3/(32*Pi)*(1- mz^2/mh^2)^3*SF4/.mw->80.36/.mz->91.18/.e->Sqrt[4*Pi/137]//Simplify;
 
-Print["Partial decay width saved in \"HZAexpressionDW\" "]
+Print["Partial decay width saved in \"ExpressionDWidth\" "]
 
 DWidth1 = StringReplace[ToString[DWidth, InputForm], {"*^" -> "*10^", ".*" -> "*"}]
 text = "    DW= mathematica(\"" <> DWidth1 <> "\")";
