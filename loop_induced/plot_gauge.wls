@@ -1,33 +1,24 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-Dir = "/home/edilson/Dropbox/Research/HdecaysRNS"
-
+Dir = "/path/to/your/folder/"
 
 tmp=StringJoin[Dir,"/outputs"]
-
 
 SetDirectory[tmp]
 
 
 name = Input["Key Word: "] (* name = tanb *)
-
-
 a = Input["Initial data: "] (* a = 1 *)
-
-
 b = Input["Final data: "] (* b = 2 *)
 
 
 datos[n_] := Import[ToString[name]<>"dataHiggs"<>ToString[n]<>".csv", "CSV"];
 
-
 datosv2[m_] := Map[ToExpression@StringSplit[First[#], ","]&,datos[m]]
 
-
 redondear[x_, n_] := 
-  Round[x, 10^Floor[Log10[Abs[x]]] * 10^(-n + 1)]
-
+  Round[x, 10^Floor[Log10[Abs[x]]] * 10^(-n + 1)]yu
 
 SMvalues = {1 (*tanb*), 
 			0.00407 (*\[CapitalGamma]_H [GeV]*), 
