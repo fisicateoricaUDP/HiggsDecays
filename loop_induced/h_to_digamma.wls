@@ -1,33 +1,22 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-Dir = "/home/edilson/Dropbox/Research/HdecaysRNS"
-
+Dir = "/path/to/your/folder"
 
 tmp=StringJoin[Dir,"/outputs2"]
-
 
 SetDirectory[tmp]
 
 
 name = Input["Key Word: "] (* name = tanb *)
-
-
 a = Input["Initial data: "] (* a= 1 *)
-
-
 b = Input["Final data: "] (* b = 7 *)
 
-
 datos[n_] := Import[ToString[name]<>"dataHiggs"<>ToString[n]<>".csv", "CSV"];
-
-
 datosv2[m_] := Map[ToExpression@StringSplit[First[#], ","]&,datos[m]]
-
 
 redondear[x_, n_] := 
   Round[x, 10^Floor[Log10[Abs[x]]] * 10^(-n + 1)]
-
 
 SMvalues = {1 (*tanb*), 
 			0.00407 (*\[CapitalGamma]_H [GeV]*), 
@@ -40,12 +29,11 @@ SMvalues = {1 (*tanb*),
 			0.0290 (*Br_cc*), 
 			0.0264 (*Br_ZZ*), 
 			0.00227 (*Br_\[Gamma]\[Gamma]*)};
-
+			
 
 (* Signal Strength = Br(MSSM)/Br(SM) *)
 ParesG[k_,m_] := Map[redondear[#,5]&, 
 				  SortBy[datosv2[k][[All, {1,2,m}]],First] /. {x_, y_, z_} :> {x, (z/y)/SMvalues[[m]]}, {2}] // N 
-
 
 (* Ratio of decay widths = \[CapitalGamma](MSSM)/\[CapitalGamma](SM) *)
 ParesG2[k_,m_] := Map[redondear[#,5]&, 
@@ -57,8 +45,6 @@ paresG2 = Flatten[Table[Map[ParesG2[k,#]&,{11}],{k,a,b}],1];
 
 
 ParesMh[k_] := Map[redondear[#,5]&, SortBy[datosv2[k][[All, {1,4}]],First]/. {x_, y_} :> {x, y}, {2}] // N 
-
-
 ParesGh[k_] := Map[redondear[#,5]&, SortBy[datosv2[k][[All, {1,2}]],First]/. {x_, y_} :> {x, y*1000}, {2}] // N 
 
 
